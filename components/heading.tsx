@@ -7,6 +7,7 @@ interface HeadingProps {
     icon: LucideIcon;
     iconColor?: string;
     bgColor?: string;
+    textColor: string;
 }
 
 export const Heading = ({
@@ -15,6 +16,7 @@ export const Heading = ({
     icon: Icon,
     iconColor,
     bgColor,
+    textColor,
 }: HeadingProps) => {
     return (
         <div className="px-4 lg:px-8 flex items-center gap-x-3 mb-8">
@@ -23,10 +25,10 @@ export const Heading = ({
             </div>
 
             <div>
-                <h2 className="text-3xl font-bold">
+                <h2 className={cn("text-3xl font-bold", textColor)}>
                     {title}
                 </h2>
-                <p className="text-sm text-muted-foreground">
+                <p className={cn("text-sm text-[#848484]")}>
                     {description}
                 </p>
             </div>
